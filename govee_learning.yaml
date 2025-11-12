@@ -1,0 +1,5 @@
+13:0E:A4:C1:38:7A:8E:34:
+  set_brightness_max:
+  get_brightness_max: 254
+  before_set_brightness_turn_on: false
+  config_offline_is_off: false

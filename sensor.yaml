@@ -1,0 +1,99 @@
+- platform: rest
+  resource: https://api.kexp.org/v2/plays/?format=json&limit=1&ordering=-airdate
+  name: KEXP
+  value_template: "{% if (value_json.results[0].play_type == 'airbreak') -%}
+    Airbreak
+    {%- else -%}
+    {{ value_json.results[0].song }} - {{ value_json.results[0].artist }}
+    {%- endif -%}"
+  json_attributes_path: "$.results[0]"
+  json_attributes:
+    - "song"
+    - "artist"
+    - "album"
+    - "image_uri"
+
+- platform: rest
+  resource: http://192.168.3.7:8754/monitor.json
+  name: FlightRadar24
+  value_template: "{{ value_json.feed_status }}"
+  json_attributes:
+    - "feed_num_ac_tracked"
+    - "feed_num_ac_adsb_tracked"
+    - "feed_num_ac_non_adsb_tracked"
+    - "mlat-number-seen"
+
+- platform: template
+  sensors:
+    indoor_aqi_pm25:
+      friendly_name: "Indoor AQI PM2.5"
+      unit_of_measurement: "AQI"
+      value_template: >
+        {% set pm25 = states('sensor.living_room_fan_pm_2_5') | float %}
+        {% if pm25 <= 12 %}
+          {{ ((50 / 12) * pm25) | round(0) }}
+        {% elif pm25 <= 35.4 %}
+          {{ ((49 / 23.4) * (pm25 - 12.1) + 51) | round(0) }}
+        {% elif pm25 <= 55.4 %}
+          {{ ((49 / 20) * (pm25 - 35.5) + 101) | round(0) }}
+        {% elif pm25 <= 150.4 %}
+          {{ ((49 / 95) * (pm25 - 55.5) + 151) | round(0) }}
+        {% elif pm25 <= 250.4 %}
+          {{ ((99 / 100) * (pm25 - 150.5) + 201) | round(0) }}
+        {% else %}
+          {{ ((99 / 199.6) * (pm25 - 250.5) + 301) | round(0) }}
+        {% endif %}
+
+    indoor_aqi_pm10:
+      friendly_name: "Indoor AQI PM10"
+      unit_of_measurement: "AQI"
+      value_template: >
+        {% set pm10 = states('sensor.living_room_fan_pm_10') | float %}
+        {% if pm10 <= 54 %}
+          {{ ((50 / 54) * pm10) | round(0) }}
+        {% elif pm10 <= 154 %}
+          {{ ((49 / 100) * (pm10 - 55) + 51) | round(0) }}
+        {% elif pm10 <= 254 %}
+          {{ ((49 / 100) * (pm10 - 155) + 101) | round(0) }}
+        {% elif pm10 <= 354 %}
+          {{ ((49 / 100) * (pm10 - 255) + 151) | round(0) }}
+        {% elif pm10 <= 424 %}
+          {{ ((99 / 70) * (pm10 - 355) + 201) | round(0) }}
+        {% else %}
+          {{ ((99 / 175) * (pm10 - 425) + 301) | round(0) }}
+        {% endif %}
+
+    indoor_aqi:
+      friendly_name: "Indoor AQI"
+      unit_of_measurement: "AQI"
+      value_template: >
+        {{ [states('sensor.indoor_aqi_pm25') | int, states('sensor.indoor_aqi_pm10') | int, states('sensor.living_room_fan_nitrogen_dioxide_index') | int] | max }}
+
+    low_battery_count:
+      friendly_name: "Low Battery Count"
+      value_template: >
+        {% set low_battery_count = namespace(count=0) %}
+        {% for entity in states.sensor %}
+          {% if "battery" in entity.entity_id and "watch" not in entity.entity_id and "iphone" not in entity.entity_id and "ipad" not in entity.entity_id and entity_id != "sensor.low_battery_count" %}
+            {% if (entity.state | is_number and entity.state | float) < 10 %}
+              {% set low_battery_count.count = low_battery_count.count + 1 %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {{ low_battery_count.count }}
+
+    sunrise_time_local:
+      friendly_name: "Sunrise Time Local"
+      value_template: >
+        {% set utc_time = states('sensor.sun_next_rising') %}
+        {% set utc_datetime = utc_time | as_datetime %}
+        {% set local_datetime = utc_datetime.astimezone() %}
+        {{ local_datetime.strftime('%I:%M %p') }}
+
+    sunset_time_local:
+      friendly_name: "Sunset Time Local"
+      value_template: >
+        {% set utc_time = states('sensor.sun_next_setting') %}
+        {% set utc_datetime = utc_time | as_datetime %}
+        {% set local_datetime = utc_datetime.astimezone() %}
+        {{ local_datetime.strftime('%I:%M %p') }}

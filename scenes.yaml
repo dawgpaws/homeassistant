@@ -1,0 +1,2052 @@
+- id: daytime
+  name: Daytime
+  entities:
+    light.daytime_lights:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - candle
+      - cosmos
+      - enchant
+      - fire
+      - glisten
+      - 'off'
+      - opal
+      - prism
+      - sparkle
+      - sunbeam
+      - sunrise
+      - sunset
+      - underwater
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: 'off'
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 5000
+      color_temp: 200
+      hs_color:
+      - 27.001
+      - 19.243
+      rgb_color:
+      - 255
+      - 228
+      - 206
+      xy_color:
+      - 0.371
+      - 0.349
+      entity_id:
+      - light.track_lights
+      - light.couch
+      - light.computer
+      - light.above_the_cabinets
+      - light.desk
+      - light.oven
+      icon: mdi:lightbulb-group
+      friendly_name: Daytime Lights
+      supported_features: 44
+      state: 'on'
+    light.nanoleaves:
+      min_color_temp_kelvin: 1200
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 833
+      effect_list:
+      - Aurora magic
+      - Beat Drop
+      - Bedtime
+      - Casual
+      - Christmas Glitter
+      - Cloudy day
+      - Color Burst
+      - Cosmos
+      - Cotton Candy
+      - Cozy Blaze
+      - Electric Chill
+      - Fiesta
+      - Fireworks
+      - Flames
+      - Flow
+      - Forest
+      - Good Vibes
+      - Hip Hop
+      - Holiday Lights
+      - Inner Peace
+      - Jalapeno Heat
+      - Kaleidoscope
+      - Meteor Shower
+      - Mountain Air
+      - Mystic Night
+      - Nature Zen
+      - Nature zen
+      - Nemo
+      - Neon Dreams
+      - Northern Lights
+      - Orange And Purple
+      - Paint Splatter
+      - Pop Rocks
+      - Prism
+      - Pulse Pop Beats
+      - Quarks
+      - Radioactive
+      - Rain
+      - Rain shower
+      - Raspberry Lemonade
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Sakura Blossom
+      - Snowfall
+      - Sound Bar
+      - Spring
+      - Starry Sky
+      - Streaking Notes
+      - Sunset
+      - Sunset vibezzz
+      - Triluminox Energy Crystal
+      - Tuscany Sunset
+      - Vaporwave
+      - Vibrant Sunrise
+      - Waterfall
+      - cherry blossom
+      - moonlight
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect:
+      color_mode: hs
+      brightness: 163
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      entity_id:
+      - light.nanoleaf_lines
+      - light.nanoleaf_triangles
+      icon: mdi:lightbulb-group
+      friendly_name: Nanoleaves
+      supported_features: 36
+      state: 'on'
+    light.corsair_lighting_node_core_0:
+      effect_list:
+      - Direct
+      - Rainbow Wave
+      - Color Shift
+      - Color Pulse
+      - Color Wave
+      - Static
+      - Temperature
+      - Visor
+      - Marquee
+      - Blink
+      - Sequential
+      - Rainbow
+      supported_color_modes:
+      - hs
+      effect: Rainbow
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      icon: mdi:led-outline
+      friendly_name: Corsair
+      supported_features: 4
+      state: 'on'
+    light.msi_mag_x570_tomahawk_wifi_ms_7c84_1:
+      effect_list:
+      - Direct
+      - Static
+      - Breathing
+      - Flashing
+      - Double flashing
+      - Lightning
+      - Meteor
+      - Color ring
+      - Planetary
+      - Double meteor
+      - Energy
+      - Blink
+      - Clock
+      - Color pulse
+      - Color shift
+      - Color wave
+      - Marquee
+      - Rainbow wave
+      - Visor
+      - Rainbow flashing
+      - Color ring double flashing
+      - Stack
+      - Fire
+      supported_color_modes:
+      - hs
+      effect: Rainbow wave
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      icon: mdi:view-dashboard-outline
+      friendly_name: MSI MAG X570 TOMAHAWK WIFI (MS-7C84) 1
+      supported_features: 4
+      state: 'on'
+    light.tv_govee:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      effect_list:
+      - ''
+      - Action
+      - ARRAKIS
+      - Asleep
+      - Aurora
+      - Bloom
+      - Breathe
+      - Candlelight
+      - Colorful
+      - Comedies
+      - Crossing
+      - Documentaries
+      - Drumbeat
+      - Energetic
+      - Fire
+      - Fright
+      - Glitter
+      - Literary
+      - Meteor
+      - Movie
+      - 'Music: Beat'
+      - 'Music: RainbowCircle'
+      - 'Music: Rhythm'
+      - 'Music: Shiny'
+      - 'Music: Strike'
+      - 'Music: Torch'
+      - 'Music: Vibrate'
+      - 'Music: Vivid'
+      - Party
+      - Rainbow
+      - Reading
+      - Romance
+      - Romantic
+      - Science Fiction
+      - Seasonal
+      - Siren
+      - Snow flake
+      - SPICE
+      - Stream
+      - Suspense
+      - Tunnel
+      - War Films
+      - White Light
+      supported_color_modes:
+      - color_temp
+      - rgb
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      friendly_name: TV Govee
+      supported_features: 44
+      state: 'off'
+    switch.tv_govee_dream_view_toggle:
+      friendly_name: TV Govee Dream View Toggle
+      state: unknown
+    switch.tv_govee_power_switch:
+      friendly_name: TV Govee Power Switch
+      state: 'off'
+    input_boolean.bathroom_display_brightness:
+      editable: true
+      icon: mdi:clock-digital
+      friendly_name: Bathroom Display Brightness
+      state: 'on'
+  icon: mdi:weather-sunny
+  metadata:
+    light.corsair_lighting_node_core_0:
+      entity_only: true
+    light.msi_mag_x570_tomahawk_wifi_ms_7c84_1:
+      entity_only: true
+    input_boolean.bathroom_display_brightness:
+      entity_only: true
+- id: bedtime
+  name: Bedtime
+  entities:
+    light.daytime_lights:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - candle
+      - cosmos
+      - enchant
+      - fire
+      - glisten
+      - 'off'
+      - opal
+      - prism
+      - sparkle
+      - sunbeam
+      - sunrise
+      - sunset
+      - underwater
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: 'off'
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 2194
+      color_temp: 455
+      hs_color:
+      - 29.819
+      - 84.916
+      rgb_color:
+      - 255
+      - 146
+      - 38
+      xy_color:
+      - 0.579
+      - 0.388
+      entity_id:
+      - light.track_lights
+      - light.couch
+      - light.computer
+      - light.above_the_cabinets
+      - light.desk
+      - light.oven
+      icon: mdi:lightbulb-group
+      friendly_name: Daytime Lights
+      supported_features: 44
+      state: 'on'
+    light.nanoleaf_triangles:
+      min_color_temp_kelvin: 1200
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 833
+      effect_list:
+      - Aurora magic
+      - Bedtime
+      - Casual
+      - Christmas Glitter
+      - Cloudy day
+      - Color Burst
+      - Cosmos
+      - Electric Chill
+      - Fireworks
+      - Flames
+      - Flow
+      - Forest
+      - Holiday Lights
+      - Inner Peace
+      - Meteor Shower
+      - Nature Zen
+      - Nemo
+      - Northern Lights
+      - Orange And Purple
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Quarks
+      - Rain
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Spring
+      - Streaking Notes
+      - Sunset
+      - Sunset vibezzz
+      - Triluminox Energy Crystal
+      - Vaporwave
+      - Vibrant Sunrise
+      - cherry blossom
+      - moonlight
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: Flames
+      color_mode: hs
+      brightness: 153
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Triangles
+      supported_features: 36
+      state: 'on'
+    light.evening_lights:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      entity_id:
+      - light.bedroom_fairy_lights_socket
+      - light.salt_lamp_socket_1
+      - light.tp_link_outdoor_plug
+      - light.star_light_projector_power_switch
+      - light.bedroom_galaxy_lights_usb
+      icon: mdi:lightbulb-group
+      friendly_name: Evening Lights
+      supported_features: 0
+      state: 'on'
+    light.nanoleaf_lines:
+      min_color_temp_kelvin: 1200
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 833
+      effect_list:
+      - Beat Drop
+      - Cotton Candy
+      - Cozy Blaze
+      - Fiesta
+      - Flames
+      - Good Vibes
+      - Hip Hop
+      - Jalapeno Heat
+      - Kaleidoscope
+      - Mountain Air
+      - Mystic Night
+      - Nature zen
+      - Neon Dreams
+      - Northern Lights
+      - Pop Rocks
+      - Prism
+      - Radioactive
+      - Rain
+      - Rain shower
+      - Raspberry Lemonade
+      - Sakura Blossom
+      - Starry Sky
+      - Tuscany Sunset
+      - Waterfall
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: Flames
+      color_mode: hs
+      brightness: 160
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Lines
+      supported_features: 36
+      state: 'on'
+    light.msi_mag_x570_tomahawk_wifi_ms_7c84_1:
+      effect_list:
+      - Direct
+      - Static
+      - Breathing
+      - Flashing
+      - Double flashing
+      - Lightning
+      - Meteor
+      - Color ring
+      - Planetary
+      - Double meteor
+      - Energy
+      - Blink
+      - Clock
+      - Color pulse
+      - Color shift
+      - Color wave
+      - Marquee
+      - Rainbow wave
+      - Visor
+      - Rainbow flashing
+      - Color ring double flashing
+      - Stack
+      - Fire
+      supported_color_modes:
+      - hs
+      effect: Direct
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 30.622
+      - 94.51
+      rgb_color:
+      - 255
+      - 137
+      - 14
+      xy_color:
+      - 0.598
+      - 0.383
+      icon: mdi:view-dashboard-outline
+      friendly_name: MSI MAG X570 TOMAHAWK WIFI (MS-7C84) 1
+      supported_features: 4
+      state: 'on'
+    light.corsair_lighting_node_core_0:
+      effect_list:
+      - Direct
+      - Rainbow Wave
+      - Color Shift
+      - Color Pulse
+      - Color Wave
+      - Static
+      - Temperature
+      - Visor
+      - Marquee
+      - Blink
+      - Sequential
+      - Rainbow
+      supported_color_modes:
+      - hs
+      effect: Direct
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 18
+      - 98.039
+      rgb_color:
+      - 255
+      - 80
+      - 5
+      xy_color:
+      - 0.662
+      - 0.33
+      icon: mdi:led-outline
+      friendly_name: Corsair
+      supported_features: 4
+      state: 'on'
+    light.table_lamp:
+      min_color_temp_kelvin: 2702
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - ''
+      - Accompany
+      - Afternoon
+      - Aurora
+      - Breathe
+      - Candy Cane
+      - Cherry blossoms
+      - Christmas
+      - Christmas Bell
+      - Desert
+      - Dreamland
+      - Dreamlike
+      - Earth
+      - Easter Egg
+      - Fall
+      - Falling Petals
+      - Feather
+      - Fire
+      - Firefly
+      - Fish tank
+      - Forest
+      - Ghost
+      - Goldfish
+      - Gradient
+      - Graffiti
+      - Halloween
+      - Healing
+      - Heartbeat
+      - Interlaced
+      - Joyful
+      - Jupiter
+      - Karst Cave
+      - Kitchen Aromas
+      - Lake
+      - Leisure
+      - Mars
+      - Milky Way
+      - Morning
+      - Mountain Forest
+      - 'Music: Energic'
+      - 'Music: Rhythm'
+      - 'Music: Rolling'
+      - 'Music: Spectrum'
+      - Mysterious
+      - Night
+      - Night Light
+      - Ocean
+      - Rainbow
+      - Raining
+      - Reading
+      - Refreshing
+      - Rubik's Cube
+      - Saint Patrick's Day
+      - Sky
+      - Smudge
+      - Snow flake
+      - Soothing
+      - Spring
+      - Spring Wind
+      - Starry Sky
+      - Summer
+      - Sunrise
+      - Sunset
+      - Sunset Glow
+      - Swing
+      - Train
+      - Uranus
+      - Valentine's Day
+      - Venus
+      - Wave
+      - White Light
+      - Winter
+      supported_color_modes:
+      - color_temp
+      - rgb
+      effect: Fire
+      color_mode: color_temp
+      brightness: 13
+      color_temp_kelvin: 2702
+      color_temp: 370
+      hs_color:
+      - 28.391
+      - 65.659
+      rgb_color:
+      - 255
+      - 167
+      - 88
+      xy_color:
+      - 0.524
+      - 0.388
+      friendly_name: Table Lamp
+      supported_features: 44
+      state: 'on'
+    switch.table_lamp_power_switch:
+      friendly_name: Table Lamp Power Switch
+      state: 'on'
+  icon: mdi:weather-night
+  metadata:
+    light.msi_mag_x570_tomahawk_wifi_ms_7c84_1:
+      entity_only: true
+    light.corsair_lighting_node_core_0:
+      entity_only: true
+- id: reading_in_bed
+  name: Reading in Bed
+  entities:
+    light.bedroom_white:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 454
+      effect_list:
+      - candle
+      - glisten
+      - 'off'
+      - sparkle
+      supported_color_modes:
+      - color_temp
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.bedroom_1
+      - light.bedroom_2
+      icon: mdi:lightbulb-group
+      friendly_name: Bedroom White
+      supported_features: 44
+      state: 'off'
+    light.bedroom_color:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - 'off'
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Bedroom Color
+      supported_features: 44
+      state: 'off'
+    light.floor_lamp:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - 'off'
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Floor Lamp
+      supported_features: 44
+      state: 'off'
+    light.edison_lamp:
+      effect_list:
+      - 'off'
+      - candle
+      supported_color_modes:
+      - brightness
+      effect: 'off'
+      color_mode: brightness
+      brightness: 50
+      mode: normal
+      dynamics: none
+      friendly_name: Edison Lamp
+      supported_features: 44
+      state: 'on'
+    light.bed:
+      min_color_temp_kelvin: 2020
+      max_color_temp_kelvin: 6451
+      min_mireds: 155
+      max_mireds: 495
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 75
+      color_temp_kelvin: 2020
+      color_temp: 495
+      hs_color:
+      - 30.512
+      - 93.472
+      rgb_color:
+      - 255
+      - 138
+      - 17
+      xy_color:
+      - 0.596
+      - 0.384
+      mode: normal
+      dynamics: none
+      friendly_name: Bed
+      supported_features: 40
+      state: 'on'
+    light.bedroom_galaxy_lights_usb:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Bedroom Glow Wolf
+      supported_features: 0
+      state: 'on'
+    light.bedroom_fairy_lights_socket:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Bedroom Fairy Lights
+      supported_features: 0
+      state: 'on'
+    light.table_lamp:
+      min_color_temp_kelvin: 2702
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - ''
+      - Accompany
+      - Afternoon
+      - Aurora
+      - Breathe
+      - Candy Cane
+      - Cherry blossoms
+      - Christmas
+      - Christmas Bell
+      - Desert
+      - Dreamland
+      - Dreamlike
+      - Earth
+      - Easter Egg
+      - Fall
+      - Falling Petals
+      - Feather
+      - Fire
+      - Firefly
+      - Fish tank
+      - Forest
+      - Ghost
+      - Goldfish
+      - Gradient
+      - Graffiti
+      - Halloween
+      - Healing
+      - Heartbeat
+      - Interlaced
+      - Joyful
+      - Jupiter
+      - Karst Cave
+      - Kitchen Aromas
+      - Lake
+      - Leisure
+      - Mars
+      - Milky Way
+      - Morning
+      - Mountain Forest
+      - 'Music: Energic'
+      - 'Music: Rhythm'
+      - 'Music: Rolling'
+      - 'Music: Spectrum'
+      - Mysterious
+      - Night
+      - Night Light
+      - Ocean
+      - Rainbow
+      - Raining
+      - Reading
+      - Refreshing
+      - Rubik's Cube
+      - Saint Patrick's Day
+      - Sky
+      - Smudge
+      - Snow flake
+      - Soothing
+      - Spring
+      - Spring Wind
+      - Starry Sky
+      - Summer
+      - Sunrise
+      - Sunset
+      - Sunset Glow
+      - Swing
+      - Train
+      - Uranus
+      - Valentine's Day
+      - Venus
+      - Wave
+      - White Light
+      - Winter
+      supported_color_modes:
+      - color_temp
+      - rgb
+      effect: Fire
+      color_mode: color_temp
+      brightness: 13
+      color_temp_kelvin: 2702
+      color_temp: 370
+      hs_color:
+      - 28.391
+      - 65.659
+      rgb_color:
+      - 255
+      - 167
+      - 88
+      xy_color:
+      - 0.524
+      - 0.388
+      friendly_name: Table Lamp
+      supported_features: 44
+      state: 'on'
+    switch.table_lamp_power_switch:
+      friendly_name: Table Lamp Power Switch
+      state: 'on'
+    fan.bedroom:
+      entity_id:
+      - fan.bedside_table_fan
+      - fan.bedroom_floor_fan
+      friendly_name: Bedroom
+      supported_features: 48
+      icon: mdi:fan
+      state: 'on'
+  metadata:
+    fan.bedroom:
+      entity_only: true
+- id: tv
+  name: Movie Time
+  entities:
+    light.above_the_cabinets:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 50
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 254.743
+      - 68.627
+      rgb_color:
+      - 123
+      - 80
+      - 255
+      xy_color:
+      - 0.207
+      - 0.103
+      mode: normal
+      dynamics: none
+      friendly_name: Above the Cabinets
+      supported_features: 40
+      state: 'on'
+    light.bedroom_white:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 454
+      effect_list:
+      - None
+      - candle
+      - glisten
+      - sparkle
+      supported_color_modes:
+      - color_temp
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.bedroom_1
+      - light.bedroom_2
+      icon: mdi:lightbulb-group
+      friendly_name: Bedroom White
+      supported_features: 44
+      state: 'off'
+    light.bedroom_color:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: None
+      color_mode: xy
+      brightness: 75
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 254.743
+      - 68.627
+      rgb_color:
+      - 123
+      - 80
+      - 255
+      xy_color:
+      - 0.207
+      - 0.103
+      mode: normal
+      dynamics: none
+      friendly_name: Bedroom Color
+      supported_features: 44
+      state: 'on'
+    light.bed:
+      min_color_temp_kelvin: 2020
+      max_color_temp_kelvin: 6451
+      min_mireds: 155
+      max_mireds: 495
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 75
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 254.743
+      - 68.627
+      rgb_color:
+      - 123
+      - 80
+      - 255
+      xy_color:
+      - 0.207
+      - 0.103
+      mode: normal
+      dynamics: none
+      friendly_name: Bed
+      supported_features: 40
+      state: 'on'
+    light.floor_lamp:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: None
+      color_mode: xy
+      brightness: 75
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 254.743
+      - 68.627
+      rgb_color:
+      - 123
+      - 80
+      - 255
+      xy_color:
+      - 0.207
+      - 0.103
+      mode: normal
+      dynamics: none
+      friendly_name: Floor Lamp
+      supported_features: 44
+      state: 'on'
+    light.edison_lamp:
+      effect_list:
+      - None
+      - candle
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      mode: normal
+      dynamics: none
+      friendly_name: Edison Lamp
+      supported_features: 44
+      state: 'off'
+    light.computer:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: None
+      color_mode: xy
+      brightness: 25
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 254.743
+      - 68.627
+      rgb_color:
+      - 123
+      - 80
+      - 255
+      xy_color:
+      - 0.207
+      - 0.103
+      mode: normal
+      dynamics: none
+      friendly_name: Computer
+      supported_features: 44
+      state: 'on'
+    light.desk:
+      min_color_temp_kelvin: 2020
+      max_color_temp_kelvin: 6451
+      min_mireds: 155
+      max_mireds: 495
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Desk
+      supported_features: 40
+      state: 'off'
+    light.hallway:
+      effect_list:
+      - None
+      - candle
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      entity_id:
+      - light.hallway_1
+      - light.hallway_2
+      icon: mdi:lightbulb-group
+      friendly_name: Hallway
+      supported_features: 44
+      state: 'off'
+    light.nanoleaf_triangles:
+      min_color_temp_kelvin: 1200
+      max_color_temp_kelvin: 6493
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Aurora magic
+      - Bedtime
+      - Casual
+      - Christmas Glitter
+      - Cloudy day
+      - Color Burst
+      - Cosmos
+      - Electric Chill
+      - Fireworks
+      - Flames
+      - Flow
+      - Forest
+      - Holiday Lights
+      - Inner Peace
+      - Meteor Shower
+      - Nature Zen
+      - Nemo
+      - Northern Lights
+      - Orange And Purple
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Quarks
+      - Rain
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Spring
+      - Streaking Notes
+      - Sunset
+      - Sunset vibezzz
+      - Triluminox Energy Crystal
+      - Vaporwave
+      - Vibrant Sunrise
+      - cherry blossom
+      - moonlight
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: moonlight
+      color_mode: hs
+      brightness: 20
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Triangles
+      supported_features: 36
+      state: 'on'
+    light.oven:
+      effect_list:
+      - None
+      - candle
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      mode: normal
+      dynamics: none
+      friendly_name: Oven
+      supported_features: 44
+      state: 'off'
+    light.track_lights:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 454
+      effect_list:
+      - None
+      - candle
+      - glisten
+      - sparkle
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.above_desk
+      - light.above_tv
+      icon: mdi:lightbulb-group
+      friendly_name: Track Lights
+      supported_features: 44
+      state: 'off'
+    light.couch:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      - glisten
+      - opal
+      - prism
+      - sparkle
+      - sunrise
+      - sunset
+      - unknown
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: None
+      color_mode: xy
+      brightness: 35
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 256.705
+      - 69.02
+      rgb_color:
+      - 128
+      - 79
+      - 255
+      xy_color:
+      - 0.213
+      - 0.105
+      entity_id:
+      - light.couch_1
+      - light.couch_2
+      icon: mdi:lightbulb-group
+      friendly_name: Couch
+      supported_features: 44
+      state: 'on'
+    light.nanoleaf_lines:
+      restored: true
+      min_color_temp_kelvin: 1200
+      max_color_temp_kelvin: 6493
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - April Rain
+      - Beat Drop
+      - Christmas Glitter
+      - Cotton Candy
+      - Cozy Blaze
+      - Fiesta
+      - Good Vibes
+      - Hip Hop
+      - Ice
+      - Jalapeno Heat
+      - Kaleidoscope
+      - Mountain Air
+      - Movie Slow
+      - Mystic Night
+      - Neon Dreams
+      - Northern Lights
+      - Pop Rocks
+      - Prism
+      - Radioactive
+      - Raspberry Lemonade
+      - Sakura Blossom
+      - Spring
+      - Starry Sky
+      - Tuscany Sunset
+      - Waterfall
+      supported_color_modes:
+      - color_temp
+      - hs
+      supported_features: 36
+      state: unavailable
+    light.salt_lamp_socket_1:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Salt Lamp
+      supported_features: 0
+      state: 'on'
+    light.bedroom_galaxy_lights_usb:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Bedroom Galaxy Lights
+      supported_features: 0
+      state: 'on'
+    light.bedroom_fairy_lights_socket:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Bedroom Fairy Lights
+      supported_features: 0
+      state: 'on'
+    light.corsair_lighting_node_core_0:
+      effect_list:
+      - Direct
+      - Rainbow Wave
+      - Color Shift
+      - Color Pulse
+      - Color Wave
+      - Static
+      - Temperature
+      - Visor
+      - Marquee
+      - Blink
+      - Sequential
+      - Rainbow
+      supported_color_modes:
+      - hs
+      icon: mdi:led-outline
+      friendly_name: Corsair
+      supported_features: 4
+      effect:
+      color_mode:
+      brightness:
+      hs_color:
+      rgb_color:
+      xy_color:
+      state: 'off'
+    light.msi_mag_x570_tomahawk_wifi_ms_7c84_1:
+      effect_list:
+      - Direct
+      - Static
+      - Breathing
+      - Flashing
+      - Double flashing
+      - Lightning
+      - Meteor
+      - Color ring
+      - Planetary
+      - Double meteor
+      - Energy
+      - Blink
+      - Clock
+      - Color pulse
+      - Color shift
+      - Color wave
+      - Marquee
+      - Rainbow wave
+      - Visor
+      - Rainbow flashing
+      - Color ring double flashing
+      - Stack
+      - Fire
+      supported_color_modes:
+      - hs
+      icon: mdi:view-dashboard-outline
+      friendly_name: MSI MAG X570 TOMAHAWK WIFI (MS-7C84) 1
+      supported_features: 4
+      effect:
+      color_mode:
+      brightness:
+      hs_color:
+      rgb_color:
+      xy_color:
+      state: 'off'
+    light.tv_govee:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      effect_list:
+      - ''
+      - Action
+      - ARRAKIS
+      - Asleep
+      - Aurora
+      - Bloom
+      - Breathe
+      - Candlelight
+      - Colorful
+      - Comedies
+      - Crossing
+      - Documentaries
+      - Drumbeat
+      - Energetic
+      - Fire
+      - Fright
+      - Glitter
+      - Literary
+      - Meteor
+      - Movie
+      - 'Music: Beat'
+      - 'Music: RainbowCircle'
+      - 'Music: Rhythm'
+      - 'Music: Shiny'
+      - 'Music: Strike'
+      - 'Music: Torch'
+      - 'Music: Vibrate'
+      - 'Music: Vivid'
+      - Party
+      - Rainbow
+      - Reading
+      - Romance
+      - Romantic
+      - Science Fiction
+      - Seasonal
+      - Siren
+      - Snow flake
+      - SPICE
+      - Stream
+      - Suspense
+      - Tunnel
+      - War Films
+      - White Light
+      supported_color_modes:
+      - color_temp
+      - rgb
+      effect:
+      color_mode: rgb
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 0
+      - 0
+      - 0
+      xy_color:
+      - 0
+      - 0
+      friendly_name: TV Govee
+      supported_features: 44
+      state: 'on'
+    switch.tv_govee_dream_view_toggle:
+      friendly_name: TV Govee Dream View Toggle
+      state: unknown
+    switch.tv_govee_power_switch:
+      friendly_name: TV Govee Power Switch
+      state: 'on'
+  icon: mdi:movie-play
+  metadata:
+    light.corsair_lighting_node_core_0:
+      entity_only: true
+    light.msi_mag_x570_tomahawk_wifi_ms_7c84_1:
+      entity_only: true
+- id: '1730425894849'
+  name: Halloween
+  entities:
+    light.above_the_cabinets:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 27.489
+      - 89.02
+      rgb_color:
+      - 255
+      - 132
+      - 28
+      xy_color:
+      - 0.604
+      - 0.374
+      mode: normal
+      dynamics: none
+      friendly_name: Above the Cabinets
+      supported_features: 40
+      state: 'on'
+    light.bed:
+      min_color_temp_kelvin: 2020
+      max_color_temp_kelvin: 6451
+      min_mireds: 155
+      max_mireds: 495
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 34.961
+      - 99.608
+      rgb_color:
+      - 255
+      - 149
+      - 1
+      xy_color:
+      - 0.585
+      - 0.397
+      mode: normal
+      dynamics: none
+      friendly_name: Bed
+      supported_features: 40
+      state: 'on'
+    light.bedroom_color:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: None
+      color_mode: xy
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 268.941
+      - 100
+      rgb_color:
+      - 123
+      - 0
+      - 255
+      xy_color:
+      - 0.208
+      - 0.073
+      mode: normal
+      dynamics: none
+      friendly_name: Bedroom Color
+      supported_features: 44
+      state: 'on'
+    light.bedroom_white:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 454
+      effect_list:
+      - None
+      - candle
+      - glisten
+      - sparkle
+      supported_color_modes:
+      - color_temp
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.bedroom_1
+      - light.bedroom_2
+      icon: mdi:lightbulb-group
+      friendly_name: Bedroom White
+      supported_features: 44
+      state: 'off'
+    light.computer:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: None
+      color_mode: xy
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 273.389
+      - 93.725
+      rgb_color:
+      - 149
+      - 16
+      - 255
+      xy_color:
+      - 0.24
+      - 0.089
+      mode: normal
+      dynamics: none
+      friendly_name: Computer
+      supported_features: 44
+      state: 'on'
+    light.couch_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: None
+      color_mode: xy
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 278.087
+      - 90.196
+      rgb_color:
+      - 171
+      - 25
+      - 255
+      xy_color:
+      - 0.2712
+      - 0.1047
+      mode: normal
+      dynamics: none
+      friendly_name: Couch 1
+      supported_features: 44
+      state: 'on'
+    light.couch_2:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: None
+      color_mode: xy
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 29.333
+      - 88.235
+      rgb_color:
+      - 255
+      - 140
+      - 30
+      xy_color:
+      - 0.5922
+      - 0.3829
+      mode: normal
+      dynamics: none
+      friendly_name: Couch 2
+      supported_features: 44
+      state: 'on'
+    light.desk:
+      min_color_temp_kelvin: 2020
+      max_color_temp_kelvin: 6451
+      min_mireds: 155
+      max_mireds: 495
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 270.824
+      - 100
+      rgb_color:
+      - 131
+      - 0
+      - 255
+      xy_color:
+      - 0.217
+      - 0.077
+      mode: normal
+      dynamics: none
+      friendly_name: Desk
+      supported_features: 40
+      state: 'on'
+    light.hallway:
+      effect_list:
+      - None
+      - candle
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      entity_id:
+      - light.hallway_1
+      - light.hallway_2
+      icon: mdi:lightbulb-group
+      friendly_name: Hallway
+      supported_features: 44
+      state: 'off'
+    light.salt_lamp_socket_1:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Salt Lamp
+      supported_features: 0
+      state: 'on'
+    light.nanoleaf_lines:
+      min_color_temp_kelvin: 1200
+      max_color_temp_kelvin: 6493
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - April Rain
+      - Beat Drop
+      - Christmas Glitter
+      - Cotton Candy
+      - Cozy Blaze
+      - Fiesta
+      - Good Vibes
+      - Hip Hop
+      - Ice
+      - Jalapeno Heat
+      - Kaleidoscope
+      - Mountain Air
+      - Movie Slow
+      - Mystic Night
+      - Neon Dreams
+      - Northern Lights
+      - Pop Rocks
+      - Prism
+      - Radioactive
+      - Raspberry Lemonade
+      - Sakura Blossom
+      - Spring
+      - Starry Sky
+      - Tuscany Sunset
+      - Waterfall
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: Mystic Night
+      color_mode: hs
+      brightness: 104
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Lines
+      supported_features: 36
+      state: 'on'
+    light.nanoleaf_triangles:
+      min_color_temp_kelvin: 1200
+      max_color_temp_kelvin: 6493
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Aurora magic
+      - Bedtime
+      - Casual
+      - Christmas Glitter
+      - Cloudy day
+      - Color Burst
+      - Cosmos
+      - Electric Chill
+      - Fireworks
+      - Flames
+      - Flow
+      - Forest
+      - Holiday Lights
+      - Inner Peace
+      - Meteor Shower
+      - Nature Zen
+      - Nemo
+      - Northern Lights
+      - Orange And Purple
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Quarks
+      - Rain
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Spring
+      - Streaking Notes
+      - Sunset
+      - Sunset vibezzz
+      - Triluminox Energy Crystal
+      - Vaporwave
+      - Vibrant Sunrise
+      - cherry blossom
+      - moonlight
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: Orange And Purple
+      color_mode: hs
+      brightness: 127
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Triangles
+      supported_features: 36
+      state: 'on'
+    light.edison_lamp:
+      effect_list:
+      - None
+      - candle
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      mode: normal
+      dynamics: none
+      friendly_name: Edison Lamp
+      supported_features: 44
+      state: 'off'
+    light.bedroom_galaxy_lights_usb:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      friendly_name: Bedroom Galaxy Lights
+      supported_features: 0
+      state: 'off'
+    light.oven:
+      effect_list:
+      - None
+      - candle
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      mode: normal
+      dynamics: none
+      friendly_name: Oven
+      supported_features: 44
+      state: 'off'
+    light.track_lights:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 454
+      effect_list:
+      - None
+      - candle
+      - glisten
+      - sparkle
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.above_desk
+      - light.above_tv
+      icon: mdi:lightbulb-group
+      friendly_name: Track Lights
+      supported_features: 44
+      state: 'off'
+    light.floor_lamp:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: None
+      color_mode: xy
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 273.077
+      - 91.765
+      rgb_color:
+      - 150
+      - 21
+      - 255
+      xy_color:
+      - 0.2422
+      - 0.0907
+      mode: normal
+      dynamics: none
+      friendly_name: Floor Lamp
+      supported_features: 44
+      state: 'on'
+    switch.tp_link_outdoor_plug_fence_lights:
+      friendly_name: TP-Link Outdoor Plug Fence Lights
+      state: 'on'
+  icon: mdi:halloween
+  metadata:
+    light.above_the_cabinets:
+      entity_only: true
+    light.bed:
+      entity_only: true
+    light.bedroom_color:
+      entity_only: true
+    light.bedroom_white:
+      entity_only: true
+    light.computer:
+      entity_only: true
+    light.couch_1:
+      entity_only: true
+    light.couch_2:
+      entity_only: true
+    light.desk:
+      entity_only: true
+    light.hallway:
+      entity_only: true
+    light.salt_lamp_socket_1:
+      entity_only: true
+    light.nanoleaf_lines:
+      entity_only: true
+    light.nanoleaf_triangles:
+      entity_only: true
+    light.edison_lamp:
+      entity_only: true
+    light.bedroom_galaxy_lights_usb:
+      entity_only: true
+    light.oven:
+      entity_only: true
+    light.track_lights:
+      entity_only: true
+    light.floor_lamp:
+      entity_only: true
+    switch.tp_link_outdoor_plug_fence_lights:
+      entity_only: true

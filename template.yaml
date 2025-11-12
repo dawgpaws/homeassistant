@@ -1,0 +1,147 @@
+- trigger:
+  - platform: time_pattern
+    hours: "/1" # Update every hour
+  - platform: homeassistant
+    event: start
+  action:
+    - service: weather.get_forecasts
+      data:
+        type: daily
+      target:
+        entity_id: weather.home # Change to your weather entity
+      response_variable: daily
+  sensor:
+    - name: "Weather Forecast Day 1"
+      unique_id: weather_forecast_day_1
+      state: "{{ daily['weather.home'].forecast[0].condition }}"
+      attributes:
+        temp_high: "{{ daily['weather.home'].forecast[0].temperature }}"
+        temp_low: "{{ daily['weather.home'].forecast[0].templow }}"
+        precipitation: "{{ daily['weather.home'].forecast[0].precipitation | default(0) }}"
+        datetime: "{{ daily['weather.home'].forecast[0].datetime }}"
+
+    - name: "Weather Forecast Day 2"
+      unique_id: weather_forecast_day_2
+      state: "{{ daily['weather.home'].forecast[1].condition }}"
+      attributes:
+        temp_high: "{{ daily['weather.home'].forecast[1].temperature }}"
+        temp_low: "{{ daily['weather.home'].forecast[1].templow }}"
+        precipitation: "{{ daily['weather.home'].forecast[1].precipitation | default(0) }}"
+        datetime: "{{ daily['weather.home'].forecast[1].datetime }}"
+
+    - name: "Weather Forecast Day 3"
+      unique_id: weather_forecast_day_3
+      state: "{{ daily['weather.home'].forecast[2].condition }}"
+      attributes:
+        temp_high: "{{ daily['weather.home'].forecast[2].temperature }}"
+        temp_low: "{{ daily['weather.home'].forecast[2].templow }}"
+        precipitation: "{{ daily['weather.home'].forecast[2].precipitation | default(0) }}"
+        datetime: "{{ daily['weather.home'].forecast[2].datetime }}"
+
+    - name: "Weather Forecast Day 4"
+      unique_id: weather_forecast_day_4
+      state: "{{ daily['weather.home'].forecast[3].condition }}"
+      attributes:
+        temp_high: "{{ daily['weather.home'].forecast[3].temperature }}"
+        temp_low: "{{ daily['weather.home'].forecast[3].templow }}"
+        precipitation: "{{ daily['weather.home'].forecast[3].precipitation | default(0) }}"
+        datetime: "{{ daily['weather.home'].forecast[3].datetime }}"
+
+    - name: "Weather Forecast Day 5"
+      unique_id: weather_forecast_day_5
+      state: "{{ daily['weather.home'].forecast[4].condition }}"
+      attributes:
+        temp_high: "{{ daily['weather.home'].forecast[4].temperature }}"
+        temp_low: "{{ daily['weather.home'].forecast[4].templow }}"
+        precipitation: "{{ daily['weather.home'].forecast[4].precipitation | default(0) }}"
+        datetime: "{{ daily['weather.home'].forecast[4].datetime }}"
+
+- trigger:
+  - platform: time_pattern
+    minutes: "/5"
+  - platform: homeassistant
+    event: start
+  - platform: state
+    entity_id:
+      - calendar.nievan94_gmail_com
+      - calendar.furry_planning_events
+  action:
+  - service: calendar.get_events
+    target:
+      entity_id: calendar.nievan94_gmail_com
+    data:
+      start_date_time: "{{ now().replace(hour=0, minute=0, second=0, microsecond=0).isoformat() }}"
+      end_date_time: "{{ (now() + timedelta(days=30)).isoformat() }}"
+    response_variable: nievan_events
+  
+  - service: calendar.get_events
+    target:
+      entity_id: calendar.furry_planning_events
+    data:
+      start_date_time: "{{ now().replace(hour=0, minute=0, second=0, microsecond=0).isoformat() }}"
+      end_date_time: "{{ (now() + timedelta(days=30)).isoformat() }}"
+    response_variable: furry_events
+  sensor:
+    - name: "Crypto's Next Event"
+      unique_id: crypto_next_event
+      state: >
+        {% set nievan = nievan_events['calendar.nievan94_gmail_com'].events %}
+        {% set furry = furry_events['calendar.furry_planning_events'].events %}
+        
+        {% if nievan | count == 0 and furry | count == 0 %}
+          No upcoming events
+        {% elif nievan | count == 0 %}
+          {{ furry[0].summary }}
+        {% elif furry | count == 0 %}
+          {{ nievan[0].summary }}
+        {% elif nievan[0].start < furry[0].start %}
+          {{ nievan[0].summary }}
+        {% else %}
+          {{ furry[0].summary }}
+        {% endif %}
+      attributes:
+        start_time: >
+          {% set nievan = nievan_events['calendar.nievan94_gmail_com'].events %}
+          {% set furry = furry_events['calendar.furry_planning_events'].events %}
+          
+          {% if nievan | count == 0 and furry | count == 0 %}
+            None
+          {% elif nievan | count == 0 %}
+            {{ furry[0].start }}
+          {% elif furry | count == 0 %}
+            {{ nievan[0].start }}
+          {% elif nievan[0].start < furry[0].start %}
+            {{ nievan[0].start }}
+          {% else %}
+            {{ furry[0].start }}
+          {% endif %}
+        end_time: >
+          {% set nievan = nievan_events['calendar.nievan94_gmail_com'].events %}
+          {% set furry = furry_events['calendar.furry_planning_events'].events %}
+          
+          {% if nievan | count == 0 and furry | count == 0 %}
+            None
+          {% elif nievan | count == 0 %}
+            {{ furry[0].end }}
+          {% elif furry | count == 0 %}
+            {{ nievan[0].end }}
+          {% elif nievan[0].start < furry[0].start %}
+            {{ nievan[0].end }}
+          {% else %}
+            {{ furry[0].end }}
+          {% endif %}
+        all_day: >
+          {% set nievan = nievan_events['calendar.nievan94_gmail_com'].events %}
+          {% set furry = furry_events['calendar.furry_planning_events'].events %}
+          
+          {% if nievan | count == 0 and furry | count == 0 %}
+            false
+          {% elif nievan | count == 0 %}
+            {{ furry[0].all_day }}
+          {% elif furry | count == 0 %}
+            {{ nievan[0].all_day }}
+          {% elif nievan[0].start < furry[0].start %}
+            {{ nievan[0].all_day }}
+          {% else %}
+            {{ furry[0].all_day }}
+          {% endif %}

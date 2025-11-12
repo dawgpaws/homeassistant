@@ -1,0 +1,10 @@
+toggle_desk_leds:
+  url: http://192.168.1.82/restapi/relay/outlets/0/cycle
+  method: post
+  payload: "{}"
+  headers:
+    Content-Type: application/json
+    X-Requested-With: XMLHttpRequest
+  verify_ssl: false
+  username: !secret web_power_switch_username
+  password: !secret web_power_switch_password

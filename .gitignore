@@ -1,0 +1,15 @@
+.git
+.cloud
+.storage
+photos/
+esphome/
+secrets.yaml
+*.lock
+*log*
+*db*
+www/
+themes/
+telegram_bot/
+custom_components/
+pyscript/
+gtfs2/

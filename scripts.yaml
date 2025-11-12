@@ -1,0 +1,244 @@
+set_random_color:
+  alias: Set a random color
+  fields:
+    light_entity:
+      name: Entity to set a random color on
+      selector:
+        entity:
+          filter:
+            domain: light
+    brightness_pct:
+      name: Brightness percent
+      selector:
+        number:
+          min: 0
+          max: 255
+  sequence:
+  - action: light.turn_on
+    target:
+      entity_id: '{{ light_entity }}'
+    data:
+      brightness: '{{ brightness_pct }}'
+      hs_color:
+      - '{{ range(360)|random }}'
+      - 100
+set_complimentary_color:
+  alias: Set to a complimentary color
+  fields:
+    light_entity:
+      name: Entity to set the color for
+      selector:
+        entity:
+          filter:
+            domain: light
+    light_base:
+      name: Entity to get the color from
+      selector:
+        entity:
+          filter:
+            domain: light
+    brightness_pct:
+      name: Brightness percent
+      selector:
+        number:
+          min: 0
+          max: 255
+  sequence:
+  - action: light.turn_on
+    target:
+      entity_id: '{{ light_entity }}'
+    data:
+      brightness: '{{ brightness_pct }}'
+  - action: light.turn_on
+    target:
+      entity_id: '{{ light_entity }}'
+    data:
+      brightness: '{{ brightness_pct }}'
+      hs_color:
+      - '{{ ((state_attr(light_base, ''hs_color'')[0] + 180) | int) % 360 }}'
+      - 100
+set_complimentary_color_three_way:
+  alias: Set to a complimentary color - three way
+  fields:
+    light_entity_2:
+      name: Entity 1 to set the color for
+      selector:
+        entity:
+          filter:
+            domain: light
+    light_entity_3:
+      name: Entity 2 to set the color for
+      selector:
+        entity:
+          filter:
+            domain: light
+    light_base:
+      name: Entity to get the color from
+      selector:
+        entity:
+          filter:
+            domain: light
+    brightness_pct:
+      name: Brightness percent
+      selector:
+        number:
+          min: 0
+          max: 255
+  sequence:
+  - action: light.turn_on
+    target:
+      entity_id: '{{ light_entity_2 }}'
+    data:
+      brightness: '{{ brightness_pct }}'
+  - action: light.turn_on
+    target:
+      entity_id: '{{ light_entity_3 }}'
+    data:
+      brightness: '{{ brightness_pct }}'
+  - action: light.turn_on
+    target:
+      entity_id: '{{ light_entity_2 }}'
+    data:
+      brightness: '{{ brightness_pct }}'
+      hs_color:
+      - '{{ ((state_attr(light_base, ''hs_color'')[0] + 120) | int) % 360 }}'
+      - 100
+  - action: light.turn_on
+    target:
+      entity_id: '{{ light_entity_3 }}'
+    data:
+      brightness: '{{ brightness_pct }}'
+      hs_color:
+      - '{{ ((state_attr(light_base, ''hs_color'')[0] - 120) | int) % 360 }}'
+      - 100
+randomize_bedroom:
+  alias: Randomize Bedroom
+  sequence:
+  - action: script.set_random_color
+    data:
+      light_entity: light.bed
+      brightness_pct: 255
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 50
+  - action: script.set_complimentary_color_three_way
+    data:
+      light_entity_2: light.floor_lamp
+      light_entity_3: light.bedroom_color
+      light_base: light.bed
+      brightness_pct: 255
+  - action: light.turn_off
+    data: {}
+    target:
+      entity_id:
+      - light.bedroom_white
+      - light.edison_lamp
+  mode: single
+  icon: mdi:palette
+living_room_randomize:
+  alias: 'Randomize Living Area '
+  icon: mdi:palette
+  sequence:
+  - action: light.turn_off
+    target:
+      entity_id:
+      - light.track_lights
+    data: {}
+  - action: light.turn_off
+    data:
+      entity_id: light.oven
+  - alias: Set Desk to a Random Color
+    action: script.set_random_color
+    metadata: {}
+    data:
+      light_entity: light.desk
+      brightness_pct: 255
+  - action: script.set_complimentary_color_three_way
+    metadata: {}
+    data:
+      light_base: light.desk
+      light_entity_2: light.above_the_cabinets
+      light_entity_3: light.computer
+      brightness_pct: 255
+  - action: light.turn_on
+    target:
+      entity_id: light.couch_2
+    data:
+      hs_color:
+      - '{{ state_attr(''light.above_the_cabinets'', ''hs_color'')[0] }}'
+      - 100
+    alias: Set Couch 2 to same color as Above Cabinets
+  - action: light.turn_on
+    target:
+      entity_id: light.couch_1
+    data:
+      hs_color:
+      - '{{ state_attr(''light.computer'', ''hs_color'')[0] }}'
+      - 100
+    alias: Set Couch 1 to same color as Computer
+  - action: light.turn_on
+    data:
+      effect: Kaleidoscope
+    target:
+      entity_id: light.nanoleaf_lines
+  - action: light.turn_on
+    data:
+      effect: Holiday Lights
+    target:
+      entity_id: light.nanoleaf_triangles
+  description: ''
+daytime:
+  alias: Daytime Scene
+  sequence:
+  - if:
+    - condition: state
+      entity_id: light.desk
+      state: unavailable
+    then:
+    - action: rest_command.toggle_desk_leds
+      data: {}
+    - delay:
+        hours: 0
+        minutes: 0
+        seconds: 10
+        milliseconds: 0
+  - action: scene.turn_on
+    target:
+      entity_id:
+      - scene.daytime
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  - event: reset_white_balance
+    event_data: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  - action: script.set_random_color
+    data:
+      light_entity: light.desk
+      brightness_pct: 255
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  - action: script.set_complimentary_color
+    data:
+      light_entity: light.above_the_cabinets
+      brightness_pct: 255
+      light_base: light.desk
+  - action: switch.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.christmas_tree_socket_1
+  mode: single
+  icon: mdi:weather-sunny
