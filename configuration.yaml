@@ -11,3 +11,4 @@ scene: !include scenes.yaml
 rest_command: !include rest_command.yaml
 sensor: !include sensor.yaml
 template: !include template.yaml
+customize: !include customize.yaml

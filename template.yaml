@@ -1,8 +1,8 @@
 - trigger:
-  - platform: time_pattern
-    hours: "/1" # Update every hour
-  - platform: homeassistant
-    event: start
+    - platform: time_pattern
+      hours: "/1" # Update every hour
+    - platform: homeassistant
+      event: start
   action:
     - service: weather.get_forecasts
       data:
@@ -57,37 +57,37 @@
         datetime: "{{ daily['weather.home'].forecast[4].datetime }}"
 
 - trigger:
-  - platform: time_pattern
-    minutes: "/5"
-  - platform: homeassistant
-    event: start
-  - platform: state
-    entity_id:
-      - calendar.nievan94_gmail_com
-      - calendar.furry_planning_events
+    - platform: time_pattern
+      minutes: "/5"
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id:
+        - calendar.nievan94_gmail_com
+        - calendar.furry_plans_attending_events
   action:
-  - service: calendar.get_events
-    target:
-      entity_id: calendar.nievan94_gmail_com
-    data:
-      start_date_time: "{{ now().replace(hour=0, minute=0, second=0, microsecond=0).isoformat() }}"
-      end_date_time: "{{ (now() + timedelta(days=30)).isoformat() }}"
-    response_variable: nievan_events
-  
-  - service: calendar.get_events
-    target:
-      entity_id: calendar.furry_planning_events
-    data:
-      start_date_time: "{{ now().replace(hour=0, minute=0, second=0, microsecond=0).isoformat() }}"
-      end_date_time: "{{ (now() + timedelta(days=30)).isoformat() }}"
-    response_variable: furry_events
+    - service: calendar.get_events
+      target:
+        entity_id: calendar.nievan94_gmail_com
+      data:
+        start_date_time: "{{ now().isoformat() }}"
+        end_date_time: "{{ (now() + timedelta(days=30)).isoformat() }}"
+      response_variable: nievan_events
+
+    - service: calendar.get_events
+      target:
+        entity_id: calendar.furry_plans_attending_events
+      data:
+        start_date_time: "{{ now().isoformat() }}"
+        end_date_time: "{{ (now() + timedelta(days=30)).isoformat() }}"
+      response_variable: furry_events
   sensor:
     - name: "Crypto's Next Event"
       unique_id: crypto_next_event
       state: >
         {% set nievan = nievan_events['calendar.nievan94_gmail_com'].events %}
-        {% set furry = furry_events['calendar.furry_planning_events'].events %}
-        
+        {% set furry = furry_events['calendar.furry_plans_attending_events'].events %}
+
         {% if nievan | count == 0 and furry | count == 0 %}
           No upcoming events
         {% elif nievan | count == 0 %}
@@ -102,8 +102,8 @@
       attributes:
         start_time: >
           {% set nievan = nievan_events['calendar.nievan94_gmail_com'].events %}
-          {% set furry = furry_events['calendar.furry_planning_events'].events %}
-          
+          {% set furry = furry_events['calendar.furry_plans_attending_events'].events %}
+
           {% if nievan | count == 0 and furry | count == 0 %}
             None
           {% elif nievan | count == 0 %}
@@ -117,8 +117,8 @@
           {% endif %}
         end_time: >
           {% set nievan = nievan_events['calendar.nievan94_gmail_com'].events %}
-          {% set furry = furry_events['calendar.furry_planning_events'].events %}
-          
+          {% set furry = furry_events['calendar.furry_plans_attending_events'].events %}
+
           {% if nievan | count == 0 and furry | count == 0 %}
             None
           {% elif nievan | count == 0 %}
@@ -132,16 +132,16 @@
           {% endif %}
         all_day: >
           {% set nievan = nievan_events['calendar.nievan94_gmail_com'].events %}
-          {% set furry = furry_events['calendar.furry_planning_events'].events %}
-          
+          {% set furry = furry_events['calendar.furry_plans_attending_events'].events %}
+
           {% if nievan | count == 0 and furry | count == 0 %}
             false
           {% elif nievan | count == 0 %}
-            {{ furry[0].all_day }}
+            {{ 'T' not in furry[0].start }}
           {% elif furry | count == 0 %}
-            {{ nievan[0].all_day }}
+            {{ 'T' not in nievan[0].start }}
           {% elif nievan[0].start < furry[0].start %}
-            {{ nievan[0].all_day }}
+            {{ 'T' not in nievan[0].start }}
           {% else %}
-            {{ furry[0].all_day }}
+            {{ 'T' not in furry[0].start }}
           {% endif %}

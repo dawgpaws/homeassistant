@@ -1,0 +1,7 @@
+sensor.ge_laundry_status:
+  icon: >-
+    {% if not is_state('sensor.ge_laundry_status', 'Machine Off') %}
+      mdi:washing-machine
+    {% else %}
+      mdi:washing-machine-off
+    {% endif %}
