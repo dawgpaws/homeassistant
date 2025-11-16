@@ -97,3 +97,13 @@
         {% set utc_datetime = utc_time | as_datetime %}
         {% set local_datetime = utc_datetime.astimezone() %}
         {{ local_datetime.strftime('%I:%M %p') }}
+
+    nws_alert_description:
+      friendly_name: "NWS Alert Description"
+      value_template: >
+        {% set alerts = state_attr('sensor.nws_alerts', 'Alerts') %}
+        {% if alerts and alerts | length > 0 %}
+          {{ alerts | map(attribute='Event') | join(', ') }}
+        {% else %}
+          No active alerts
+        {% endif %}
